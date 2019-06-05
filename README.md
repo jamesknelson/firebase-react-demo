@@ -1,3 +1,54 @@
+# Firebase / Create React App
+
+This is the source from my [video introduction to adding Firebase to a Create React App project](https://www.youtube.com/watch?v=9HTJj03BoQo&t=14m30).
+
+It's a simple Create React App project, but with a few extras:
+
+- Firebase functions are configured, along with a development server
+- Firebase hosting is set up, along with a predeploy script that builds your app
+- 
+
+## Firebase scripts
+
+To start the functions dev server:
+
+```js
+firebase serve --only functions
+```
+
+To deploy your app to firebase hosting:
+
+```js
+firebase deploy --only functions
+firebase deploy --only hosting
+```
+
+## Configuration
+
+To get it working, you'll need to add a configuration file in `src/firebase.config.js`, with the following form. You can get these details from the [Firebase console](https://console.firebase.google.com) -- for details, see [the video](https://www.youtube.com/watch?v=9HTJj03BoQo&t=14m30).
+
+```js
+export default {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
+}
+```
+
+## Learn more
+
+Struggle to build meaningful applications? Know the fundamentals, but not sure how to use them to build a bacon-makin' app? The check out [React & Bacon](https://frontarm.com/courses/react-and-bacon/) -- my new course that'll walk you through the process of building a real-world app built on React, Firebase and Stripe.
+
+<br>
+<br>
+<br>
+
+# And now for your regularly scheduled Create React App README
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

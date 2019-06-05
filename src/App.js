@@ -1,23 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { getServerTime } from './firebase';
 import './App.css';
 
 function App() {
+  let [serverTime, setServerTime] = useState(undefined)
+
+  useEffect(() => {
+    getServerTime().then(({ data: serverTime }) => {
+      setServerTime(serverTime)
+    })
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {serverTime === undefined ? (
+            'LOADING' 
+          ) : (
+            new Date(serverTime).toLocaleDateString()
+          )}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
