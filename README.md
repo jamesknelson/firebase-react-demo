@@ -5,8 +5,7 @@ This is the source from my [video introduction to adding Firebase to a Create Re
 It's a simple Create React App project, but with a few extras:
 
 - Firebase functions are configured, along with a development server
-- Firebase hosting is set up, along with a predeploy script that builds your app
-- 
+- Firebase hosting, along with a predeploy script that builds your app
 
 ## Firebase scripts
 
